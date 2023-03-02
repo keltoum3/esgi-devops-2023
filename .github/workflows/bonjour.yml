@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "Build Image"
-        run: docker image build --tag=cowsay:latest ./docker-git/
+        run: docker image build --tag=cowsay:latest ./
       - name: "say hello"
         run: docker container run --rm cowsay:latest bash -c "cat /README.md | /usr/games/cowsay"
       - uses: actions/checkout@v3
