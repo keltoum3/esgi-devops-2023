@@ -11,5 +11,8 @@ jobs:
         run: docker image build --tag=cowsay:latest ./docker-git/
       - name: "say hello"
         run: docker container run --rm cowsay:latest bash -c "cat /README.md | /usr/games/cowsay"
-
+      - uses: actions/checkout@v3
+      - uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
 
